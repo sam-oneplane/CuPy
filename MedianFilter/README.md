@@ -1,7 +1,4 @@
-# CuPy
-CuPy code examples 
-
-# 1. Median Filter Project
+# Median Filter Project
 
 ## Overview
 
