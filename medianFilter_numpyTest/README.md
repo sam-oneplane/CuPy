@@ -2,42 +2,17 @@
 
 ## Overview
 
-This project implement median filter using CuPy for GPU acceleration. 
+This project implement median filter using NumPy lib. 
 The median filter is applied to a 2D input array with a specified window size (50, 5000).
-There are 2 functions to implement the median filter defined in 
-class MedianFilter.
-
-1. compute_median():
-        compute naive median filter using cupyx.scipy.ndimage
-2. compute_median_with_downsample():
-        attempt to increse speed by using cupy zoom to interpolate and extrapolate both the input
-        array and the window size by some factor.
 
 
-The other function defined in 
-class MedianFilter.
+1. median_filter_naive.py:
+        compute naive median filter using scipy.ndimage
+2. median_histogram.py:
+        attempt to increse speed by approximation using histogram for median filter sort
+3. median_filter.py
+        approximation of median filter using interpolation with factor as parameter (default = 2)
 
-1. compute_mask_with_threshold() : 
-        add threshold to the computed filter and check if the result is smaller 
-        then the input value via mask array.
-2. cupy_to_np():
-        return traformed mask array from cupy to numpy. 
+
          
-
-## Installation And Tests
-
-To install the required dependencies, run:
-
-```sh
-pip install -r requirements.txt
-
-To run the tests:
-
-```sh
-python3 -m unittest discover -s tests
-
-To run the example:
-
-```sh
-python3 scripts/run_example.py
 
